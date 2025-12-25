@@ -15,6 +15,10 @@ let userAdmin = {
 let userGuest = {};
 
 userAdmin.admin?.();
+// * checking if a function exists in an object or not
 if (!userGuest.admin?.()) {
   console.log("admin in userGuest object doesn't exists");
 }
+
+// * another way of accessing object elements
+let num2 = [32, 32];
