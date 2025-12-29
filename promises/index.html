@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let urls = [
+        "https://api.github.com/users/iliakan",
+        "https://api.github.com/users/remy",
+        "https://api.github.com/users/jeresig",
+      ];
+      (async function () {
+        const requests = urls.map((url) => fetch(url));
+        for await (const req of requests) {
+          console.log(req);
+        }
+      })();
+      // Promise.all(requests).then((responses) =>
+      //   responses.forEach((res) => console.log(`${res.url}: ${res.status}`))
+      // );
+      // function showCircle(cx, cy, radius) {
+      //   return new Promise((res) => {
+      //     const div = document.createElement("div");
+      //     div.style.height = `0px`;
+      //     div.style.width = `0px`;
+      //     div.style.borderRadius = `9999px`;
+      //     div.style.position = "fixed";
+      //     div.style.background = `red`;
+      //     div.style.top = `${cy}px`;
+      //     div.style.left = `${cx}px`;
+      //     div.style.transition = `all 1s ease-in`;
+
+      //     document.body.append(div);
+      //     setTimeout(() => res([div, radius]), 500);
+      //   }).then(([div, radius]) => {
+      //     console.log(div, radius);
+      //     div.style.height = `${radius}px`;
+      //     div.style.width = `${radius}px`;
+      //     div.style.transform = `translate(-${radius / 2}px, -${radius / 2}px)`;
+      //   });
+      // }
+
+      // showCircle(150, 150, 150);
+      // function loadScript(src, callback) {
+      //   const script = document.createElement("script");
+      //   script.src = src;
+      //   script.onload = () => callback(null, script);
+      //   script.onerror = () => callback(new Error("Failed to load lodash"));
+      //   document.head.append(script);
+      // }
+      // loadScript(
+      //   "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js",
+      //   (error, script) => {
+      //     if (error) {
+      //       console.log(error);
+      //     } else {
+      //       console.log(_); // _ is a function declared in the loaded script
+      //       console.log(`Cool, the script ${script.src} is loaded`);
+      //     }
+      //   }
+      // );
+      // const promise = new Promise((resolve, reject) => {
+      //   setTimeout(() => reject(new Error("Error occurred")), 2000);
+      // });
+      // promise.then(
+      //   (result) => console.log(result),
+      //   (error) => console.error(error)
+      // );
+      // new Promise((resolve, reject) => {
+      //   setTimeout(() => resolve("value"), 2000);
+      // })
+      //   .finally(() => alert("Promise ready")) // triggers first
+      //   .then((result) => alert(result));
+      // function loadScript(src) {
+      //   return new Promise((resolve, reject) => {
+      //     const script = document.cr
+      // eateElement("script");
+      //     script.src = src;
+      //     script.onload = () => resolve(script);
+      //     script.onerror = () => reject(new Error("Failed to load script"));
+      //     document.head.append(script);
+      //   });
+      // }
+
+      // loadScript(
+      //   "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"
+      // ).then((script) => console.log(`${script.src} is loaded`), console.error);
+
+      // function delay(ms) {
+      //   return new Promise((res) => setTimeout(res, ms));
+      // }
+
+      // delay(3000).then(() => console.log("Run after 3 seconds"));
+    </script>
+  </body>
+</html>
